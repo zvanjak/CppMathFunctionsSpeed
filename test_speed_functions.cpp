@@ -43,6 +43,7 @@ struct FuncToEval
 
 std::vector<FuncToEval> vec_func = {
     {sqrt, "sqrt", 0.0, 1e9},
+    {cbrt, "cbrt", -1e9, 1e9},
     {exp, "exp", -10, 10},
     {log, "log", 0.0, 1e6},
     {log10, "log10", 0.0, 1e6},
@@ -74,7 +75,8 @@ std::vector<FuncToEval> vec_func = {
     {eval_legandre_1, "Legandre 1", -1e3, 1e3},
     {eval_laguerre_1, "Lagurre 1", -1e3, 1e3},
     {eval_sph_bessel_3, "Sph Bessel 3", -1e3, 1e3},
-    {eval_sph_legandre_3_1, "Sph Legendre 3 1", -1e3, 1e3}};
+    {eval_sph_legandre_3_1, "Sph Legendre 3 1", -1e3, 1e3}
+};
 
 static const int num_evals = 1000000;
 
