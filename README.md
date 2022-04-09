@@ -1,0 +1,1 @@
+Testing execution speed of available mathematical functions in C++
