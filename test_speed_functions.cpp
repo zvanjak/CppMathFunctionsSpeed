@@ -78,7 +78,7 @@ std::vector<FuncToEval> vec_func = {
     {eval_sph_legandre_3_1, "Sph Legendre 3 1", -1e3, 1e3}
 };
 
-static const int num_evals = 1000000;
+static const int num_evals = 10000000;
 
 int main(int, char **)
 {
@@ -103,7 +103,7 @@ int main(int, char **)
 
         duration<double, std::milli> rand_time = t2 - t1;
 
-        int num_repeats = 100;
+        int num_repeats = 1000;
         double vals[10000];
         for (int i = 0; i < 10000; i++)
         {
@@ -122,6 +122,7 @@ int main(int, char **)
 
         duration<double, std::milli> array_time = t4 - t3;
 
-        std::cout << std::setw(20) << f._name << " - " << rand_time.count() << " ; " << array_time.count() << " ms\n";
+        double diff = rand_time.count() - array_time.count(); 
+        std::cout << std::setw(20) << f._name << " - " << rand_time.count() << " ; " << array_time.count() << " ; " << diff << "\n";
     }
 }
